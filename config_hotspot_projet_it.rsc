@@ -2,13 +2,6 @@
 /interface bridge
 add name=LAN
 /interface wireless
-set [ find default-name=wlan1 ] band=2ghz-b/g/n disabled=no frequency=auto \
-    mode=ap-bridge ssid="WIFI ZONE" wireless-protocol=802.11
-/interface wireless security-profiles
-set [ find default=yes ] supplicant-identity=MikroTik
-/ip hotspot profile
-add dns-name=wifi.wifi hotspot-address=192.168.99.1 http-cookie-lifetime=1w \
-    login-by=cookie,http-chap,mac-cookie name=hsprof1
 /ip pool
 add name=DHCP-POOL ranges=192.168.99.10-192.168.99.200
 /ip dhcp-server
